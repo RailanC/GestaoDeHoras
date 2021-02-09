@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccessLayer;
 
 namespace GestaoDeHoras
 {
@@ -15,12 +16,23 @@ namespace GestaoDeHoras
         public Form1()
         {
             InitializeComponent();
-            int nn;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int nn = 0;
+
+        }
+
+        private void bttEntrar_Click(object sender, EventArgs e)
+        {
+            Login dados = new Login();
+
+            bool status = dados.InserirNota(txtLogin.Text, txtPass.Text);
+            if (status == true)
+            {
+                MessageBox.Show("Certo!!");
+            }
+            else { MessageBox.Show("Falha! Senha Errada"); }
         }
     }
 }
