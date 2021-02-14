@@ -16,7 +16,6 @@ namespace GestaoDeHoras
         public Form1()
         {
             InitializeComponent();
-            usHomeAluno.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,17 +35,17 @@ namespace GestaoDeHoras
 
         private void bttQuit_MouseHover(object sender, EventArgs e)
         {
-            bttQuit.ForeColor = Color.Red;
-        }
+       
+        }     
 
         private void bttQuit_MouseLeave(object sender, EventArgs e)
         {
-            bttQuit.ForeColor = Color.Black;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            usHomeAluno.Show();
+
         }
     }
 }
