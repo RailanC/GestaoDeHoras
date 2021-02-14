@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccessLayer;
 
-
 namespace GestaoDeHoras
 {
-    public partial class frmLoginProf : Form
+    public partial class Login : Form
     {
-        public frmLoginProf()
+        public Login()
         {
             InitializeComponent();
         }
@@ -38,29 +37,55 @@ namespace GestaoDeHoras
             }
         }
 
-        private void bttLogin_Click(object sender, EventArgs e)
+        private void bttChange_Click(object sender, EventArgs e)
+        {
+            if(lbTitle.Text == "Professor")
+            {
+                bttChange.Text = "PROFESSOR";
+                lbTitle.Text = "Aluno";
+            }
+            else
+            {
+                bttChange.Text = "ALUNO";
+                lbTitle.Text = "Professor";
+            }
+        }
+
+        private void bttLogin_Click_1(object sender, EventArgs e)
         {
             Logins dados = new Logins();
             try
             {
-                if (dados.LoginAluno(tbxUser.Text, tbxPass.Text, "Professor"))
+                if (dados.LoginAluno(tbxUser.Text, tbxPass.Text, lbTitle.Text))
                 {
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                    this.Close();
                 }
-                else { MessageBox.Show("Password Incorreta"); }
+                else
+                {
+                    MessageBox.Show("Password Incorreta");
+                }
 
-               
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
         }
 
-        private void bttChange_Click(object sender, EventArgs e)
+        private void lbCreate_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+
+        }
+
+        private void bttQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bttQuit_MouseHover(object sender, EventArgs e)
+        {
+            bttQuit.BackColor = Color.Red;
         }
     }
 }
