@@ -20,19 +20,13 @@ namespace GestaoDeHoras
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void bttEntrar_Click(object sender, EventArgs e)
-        {
-            Login dados = new Login();
-
-            bool status = dados.InserirNota(txtLogin.Text, txtPass.Text);
-            if (status == true)
+            frmLoginAluno login = new frmLoginAluno();
+            this.Hide();
+            if(login.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
             {
-                MessageBox.Show("Certo!!");
+                this.Close();
             }
-            else { MessageBox.Show("Falha! Senha Errada"); }
+            
         }
     }
 }

@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compensa.cs" />
     <Compile Include="ConString.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="NovaHoras.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistoProf.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class Login
+    public class Logins
     {
         private string user;
         private string pass;
@@ -35,7 +35,7 @@ namespace DataAccessLayer
             ConString.con.Open();
             try
             {
-                SqlCommand cmdInsNota = new SqlCommand("Select Numero from "+ tipo +" where login='"+ user +"' and Pass='"+ pass +"'", ConString.con);
+                SqlCommand cmdInsNota = new SqlCommand("Select Numero from "+ tipo +" where username='"+ user +"' and Pass='"+ pass +"'", ConString.con); //Erro
                 SqlDataReader reader = cmdInsNota.ExecuteReader();
                 if (reader.HasRows)
                 {
