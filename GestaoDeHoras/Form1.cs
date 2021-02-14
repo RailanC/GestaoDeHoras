@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccessLayer;
 
 namespace GestaoDeHoras
 {
@@ -15,6 +16,17 @@ namespace GestaoDeHoras
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            frmLoginAluno login = new frmLoginAluno();
+            this.Hide();
+            if(login.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+            {
+                this.Close();
+            }
+            
         }
     }
 }

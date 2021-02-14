@@ -52,10 +52,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAluno.Designer.cs">
+      <DependentUpon>LoginAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginProf.Designer.cs">
+      <DependentUpon>LoginProf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAluno.resx">
+      <DependentUpon>LoginAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginProf.resx">
+      <DependentUpon>LoginProf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{11fcbcd5-c97c-4508-8464-5da5d4ee73f1}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
