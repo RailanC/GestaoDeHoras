@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    class ConString
+    public class ConString
     {
         public static SqlConnection con;
 

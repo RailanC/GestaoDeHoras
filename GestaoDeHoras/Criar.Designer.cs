@@ -31,6 +31,14 @@ namespace GestaoDeHoras
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.bttLogin = new System.Windows.Forms.Button();
             this.tbxPass = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
@@ -41,28 +49,20 @@ namespace GestaoDeHoras
             this.cbxSwPass = new System.Windows.Forms.CheckBox();
             this.tbxConfPass = new System.Windows.Forms.TextBox();
             this.lbConfPass = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbTurma = new System.Windows.Forms.ComboBox();
             this.lbTurma = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbxNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbUser = new System.Windows.Forms.Label();
             this.tbxUser = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -86,6 +86,88 @@ namespace GestaoDeHoras
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 1);
             this.panel1.TabIndex = 54;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(2, 25);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(216, 1);
+            this.panel5.TabIndex = 57;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(2, -3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(216, 28);
+            this.textBox1.TabIndex = 56;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label1.Location = new System.Drawing.Point(-1, -25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Username";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.textBox4);
+            this.panel8.Controls.Add(this.label2);
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(216, 1);
+            this.panel8.TabIndex = 54;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Location = new System.Drawing.Point(2, 25);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(216, 1);
+            this.panel9.TabIndex = 57;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(2, -3);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(216, 28);
+            this.textBox4.TabIndex = 56;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
+            this.label2.Location = new System.Drawing.Point(-1, -25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Username";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(0, -25);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(216, 28);
+            this.textBox2.TabIndex = 47;
             // 
             // bttLogin
             // 
@@ -204,14 +286,15 @@ namespace GestaoDeHoras
             this.lbConfPass.TabIndex = 55;
             this.lbConfPass.Text = "Confirm Password";
             // 
-            // comboBox1
+            // cbbTurma
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Calibri", 15F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(284, 311);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 32);
-            this.comboBox1.TabIndex = 59;
+            this.cbbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTurma.Font = new System.Drawing.Font("Calibri", 15F);
+            this.cbbTurma.FormattingEnabled = true;
+            this.cbbTurma.Location = new System.Drawing.Point(284, 311);
+            this.cbbTurma.Name = "cbbTurma";
+            this.cbbTurma.Size = new System.Drawing.Size(216, 32);
+            this.cbbTurma.TabIndex = 59;
             // 
             // lbTurma
             // 
@@ -253,36 +336,6 @@ namespace GestaoDeHoras
             this.lbNome.Size = new System.Drawing.Size(45, 17);
             this.lbNome.TabIndex = 61;
             this.lbNome.Text = "Nome";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(2, 25);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(216, 1);
-            this.panel5.TabIndex = 57;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(2, -3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 28);
-            this.textBox1.TabIndex = 56;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label1.Location = new System.Drawing.Point(-1, -25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Username";
             // 
             // lbUser
             // 
@@ -347,58 +400,6 @@ namespace GestaoDeHoras
             this.label3.TabIndex = 55;
             this.label3.Text = "Username";
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(0, -25);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 28);
-            this.textBox2.TabIndex = 47;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.textBox4);
-            this.panel8.Controls.Add(this.label2);
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(216, 1);
-            this.panel8.TabIndex = 54;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Black;
-            this.panel9.Location = new System.Drawing.Point(2, 25);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(216, 1);
-            this.panel9.TabIndex = 57;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(2, -3);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(216, 28);
-            this.textBox4.TabIndex = 56;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.label2.Location = new System.Drawing.Point(-1, -25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Username";
-            // 
             // Criar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +411,7 @@ namespace GestaoDeHoras
             this.Controls.Add(this.tbxNome);
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.lbTurma);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbTurma);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.cbxSwPass);
             this.Controls.Add(this.tbxConfPass);
@@ -427,12 +428,13 @@ namespace GestaoDeHoras
             this.Controls.Add(this.tbxNumero);
             this.Name = "Criar";
             this.Text = "Criar";
+            this.Load += new System.EventHandler(this.Criar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,7 +454,7 @@ namespace GestaoDeHoras
         private System.Windows.Forms.CheckBox cbxSwPass;
         private System.Windows.Forms.TextBox tbxConfPass;
         private System.Windows.Forms.Label lbConfPass;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbTurma;
         private System.Windows.Forms.Label lbTurma;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox tbxNome;
