@@ -28,24 +28,12 @@ namespace GestaoDeHoras
             }
         }
 
-        private void bttQuit_Click(object sender, EventArgs e)
+        private void tsmiCriar_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void bttQuit_MouseHover(object sender, EventArgs e)
-        {
-       
-        }     
-
-        private void bttQuit_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            Criar criar = new Criar();
+            this.Hide();
+            criar.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -18,25 +18,6 @@ namespace GestaoDeHoras
             InitializeComponent();
         }
 
-        private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (checkbxShowPass.Checked)
-                {
-                    tbxPass.PasswordChar = '\0';
-                }
-                else
-                {
-                    tbxPass.PasswordChar = '*';
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
         private void bttChange_Click(object sender, EventArgs e)
         {
             if(lbTitle.Text == "Professor")
@@ -69,7 +50,7 @@ namespace GestaoDeHoras
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -86,6 +67,25 @@ namespace GestaoDeHoras
         private void bttQuit_MouseHover(object sender, EventArgs e)
         {
             bttQuit.BackColor = Color.Red;
+        }
+
+        private void checkbxShowPass_CheckedChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checkbxShowPass.Checked)
+                {
+                    tbxPass.PasswordChar = '\0';
+                }
+                else
+                {
+                    tbxPass.PasswordChar = '*';
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

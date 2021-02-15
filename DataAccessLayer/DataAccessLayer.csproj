@@ -46,7 +46,7 @@
     <Compile Include="Login.cs" />
     <Compile Include="NovaHoras.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistoProf.cs" />
+    <Compile Include="Registo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
