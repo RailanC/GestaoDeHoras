@@ -30,6 +30,9 @@ namespace GestaoDeHoras
                 {
                     lb_Turmas.Items.Add(reader.GetValue(0).ToString());
                 }
+                dtp_Data.CustomFormat = "yyyy/MM/dd";
+                dtpHInicial.CustomFormat = "yyyy/MM/dd HH:mm";
+                dtpHFinal.CustomFormat = "yyyy/MM/dd HH:mm";
             }
             catch (Exception ex)
             {
@@ -117,6 +120,7 @@ namespace GestaoDeHoras
             finally
             {
                 ConString.con.Close();
+
             }
         }
 
@@ -125,19 +129,23 @@ namespace GestaoDeHoras
 
             float var = 0;
             float qtdHComp = 0;
-
-
+            float total;
+            string test;
+            ConString.con.Open();
             try
             {
+                test = dtp_Data.Value.ToString();
+                total = (float.Parse(dtpHFinal.Value.ToString().Split(' ')[1].Split(':')[0]) + (float.Parse(dtpHFinal.Value.ToString().Split(' ')[1].Split(':')[1]) / 60))
+                            - (float.Parse(dtpHInicial.Value.ToString().Split(' ')[1].Split(':')[0]) + (float.Parse(dtpHInicial.Value.ToString().Split(' ')[1].Split(':')[1]) / 60));
 
-                if (tempoTot <= 0)
+                if (total <= 0)
                 {
                     MessageBox.Show("Valores de Horas Inválidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     NovaHoras novaHoras = new NovaHoras();
-                    SqlCommand cmdInsNota = new SqlCommand("Select QuantH, id from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NULL", ConString.con);
+                    SqlCommand cmdInsNota = new SqlCommand("Select QuantH from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NULL", ConString.con);
                     SqlDataReader reader = cmdInsNota.ExecuteReader();
 
                     while (reader.Read())
@@ -146,16 +154,15 @@ namespace GestaoDeHoras
                     }
 
 
-                    if (var == 0)
+                    if (var != 0)
                     {
                         reader.Close();
                         SqlCommand cmd = new SqlCommand("Select * from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NOT NULL", ConString.con);
-                        SqlDataReader reader1 = cmdInsNota.ExecuteReader();
+                        SqlDataReader reader1 = cmd.ExecuteReader();
 
                         while (reader1.Read())
                         {
                             qtdHComp += TimeToFloat(reader1.GetValue(5).ToString(), reader1.GetValue(6).ToString());
-
                         }
 
                         if (var - qtdHComp <= 0)
@@ -164,9 +171,16 @@ namespace GestaoDeHoras
                         }
                         else
                         {
+                            ConString.con.Close();
                             NovaHoras novaH = new NovaHoras();
-
-                            if (novaH.AddHoras(Convert.ToInt32(lv_Alunos.SelectedItems[0].Text), cb_Disciplina.SelectedItem.ToString(), cb_Trimestre.SelectedItem.ToString(), var, dtp_Data.Value.ToString(),  )
+                            if (novaH.AddHoras(Convert.ToInt32(lv_Alunos.SelectedItems[0].Text), cb_Disciplina.SelectedItem.ToString(), Convert.ToInt32(cb_Trimestre.SelectedItem.ToString()), var, dtp_Data.Value, dtpHInicial.Value, dtpHFinal.Value))
+                            {
+                                MessageBox.Show("C");
+                            }
+                            else
+                            {
+                                MessageBox.Show("E");
+                            }
                         }
                     }
 
@@ -178,6 +192,7 @@ namespace GestaoDeHoras
             }
             finally
             {
+                ConString.con.Close();
             }
         }
 

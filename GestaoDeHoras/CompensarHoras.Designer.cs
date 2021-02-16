@@ -35,11 +35,11 @@
             this.ch_Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lb_Turmas = new System.Windows.Forms.ListBox();
             this.cb_Trimestre = new System.Windows.Forms.ComboBox();
-            this.nud_HCompensar = new System.Windows.Forms.NumericUpDown();
             this.cb_Disciplina = new System.Windows.Forms.ComboBox();
             this.lbl_Disciplina = new System.Windows.Forms.Label();
             this.lbl_Trimestre = new System.Windows.Forms.Label();
             this.lbl_HCompensar = new System.Windows.Forms.Label();
+            this.nud_HCompensar = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nud_HCompensar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,20 +117,6 @@
             this.cb_Trimestre.Size = new System.Drawing.Size(214, 23);
             this.cb_Trimestre.TabIndex = 94;
             // 
-            // nud_HCompensar
-            // 
-            this.nud_HCompensar.DecimalPlaces = 1;
-            this.nud_HCompensar.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.nud_HCompensar.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.nud_HCompensar.Location = new System.Drawing.Point(283, 269);
-            this.nud_HCompensar.Name = "nud_HCompensar";
-            this.nud_HCompensar.Size = new System.Drawing.Size(228, 23);
-            this.nud_HCompensar.TabIndex = 93;
-            // 
             // cb_Disciplina
             // 
             this.cb_Disciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -184,6 +170,20 @@
             this.lbl_HCompensar.TabIndex = 97;
             this.lbl_HCompensar.Text = "Horas a Compensar";
             // 
+            // nud_HCompensar
+            // 
+            this.nud_HCompensar.DecimalPlaces = 1;
+            this.nud_HCompensar.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.nud_HCompensar.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nud_HCompensar.Location = new System.Drawing.Point(283, 269);
+            this.nud_HCompensar.Name = "nud_HCompensar";
+            this.nud_HCompensar.Size = new System.Drawing.Size(228, 23);
+            this.nud_HCompensar.TabIndex = 93;
+            // 
             // CompensarHoras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,10 +217,10 @@
         private System.Windows.Forms.ColumnHeader ch_Nome;
         private System.Windows.Forms.ListBox lb_Turmas;
         private System.Windows.Forms.ComboBox cb_Trimestre;
-        private System.Windows.Forms.NumericUpDown nud_HCompensar;
         private System.Windows.Forms.ComboBox cb_Disciplina;
         private System.Windows.Forms.Label lbl_Disciplina;
         private System.Windows.Forms.Label lbl_Trimestre;
         private System.Windows.Forms.Label lbl_HCompensar;
+        private System.Windows.Forms.NumericUpDown nud_HCompensar;
     }
 }

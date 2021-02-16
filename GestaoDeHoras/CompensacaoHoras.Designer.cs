@@ -41,9 +41,9 @@
             this.ch_Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lb_Turmas = new System.Windows.Forms.ListBox();
             this.btn_Submeter = new System.Windows.Forms.Button();
+            this.dtpHInicial = new System.Windows.Forms.DateTimePicker();
+            this.dtpHFinal = new System.Windows.Forms.DateTimePicker();
             this.dtp_Data = new System.Windows.Forms.DateTimePicker();
-            this.dtp_HInicial = new System.Windows.Forms.DateTimePicker();
-            this.dtp_HFinal = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_CompensacaoH
@@ -188,38 +188,36 @@
             this.btn_Submeter.UseVisualStyleBackColor = false;
             this.btn_Submeter.Click += new System.EventHandler(this.btnSubmeter_Click);
             // 
+            // dtpHInicial
+            // 
+            this.dtpHInicial.CustomFormat = " ";
+            this.dtpHInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHInicial.Location = new System.Drawing.Point(29, 315);
+            this.dtpHInicial.Name = "dtpHInicial";
+            this.dtpHInicial.ShowUpDown = true;
+            this.dtpHInicial.Size = new System.Drawing.Size(222, 25);
+            this.dtpHInicial.TabIndex = 126;
+            this.dtpHInicial.Value = new System.DateTime(2021, 2, 16, 17, 23, 0, 0);
+            // 
+            // dtpHFinal
+            // 
+            this.dtpHFinal.CustomFormat = " ";
+            this.dtpHFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHFinal.Location = new System.Drawing.Point(281, 315);
+            this.dtpHFinal.Name = "dtpHFinal";
+            this.dtpHFinal.ShowUpDown = true;
+            this.dtpHFinal.Size = new System.Drawing.Size(228, 25);
+            this.dtpHFinal.TabIndex = 127;
+            // 
             // dtp_Data
             // 
-            this.dtp_Data.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.dtp_Data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_Data.Location = new System.Drawing.Point(281, 269);
-            this.dtp_Data.MaxDate = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
+            this.dtp_Data.CustomFormat = " ";
+            this.dtp_Data.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Data.Location = new System.Drawing.Point(281, 267);
             this.dtp_Data.Name = "dtp_Data";
-            this.dtp_Data.Size = new System.Drawing.Size(228, 23);
-            this.dtp_Data.TabIndex = 125;
-            this.dtp_Data.Value = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
-            // 
-            // dtp_HInicial
-            // 
-            this.dtp_HInicial.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.dtp_HInicial.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_HInicial.Location = new System.Drawing.Point(29, 315);
-            this.dtp_HInicial.MaxDate = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
-            this.dtp_HInicial.Name = "dtp_HInicial";
-            this.dtp_HInicial.Size = new System.Drawing.Size(222, 23);
-            this.dtp_HInicial.TabIndex = 126;
-            this.dtp_HInicial.Value = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
-            // 
-            // dtp_HFinal
-            // 
-            this.dtp_HFinal.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.dtp_HFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_HFinal.Location = new System.Drawing.Point(281, 315);
-            this.dtp_HFinal.MaxDate = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
-            this.dtp_HFinal.Name = "dtp_HFinal";
-            this.dtp_HFinal.Size = new System.Drawing.Size(228, 23);
-            this.dtp_HFinal.TabIndex = 127;
-            this.dtp_HFinal.Value = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
+            this.dtp_Data.ShowUpDown = true;
+            this.dtp_Data.Size = new System.Drawing.Size(228, 25);
+            this.dtp_Data.TabIndex = 128;
             // 
             // CompensacaoHoras
             // 
@@ -227,9 +225,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(548, 411);
-            this.Controls.Add(this.dtp_HFinal);
-            this.Controls.Add(this.dtp_HInicial);
             this.Controls.Add(this.dtp_Data);
+            this.Controls.Add(this.dtpHFinal);
+            this.Controls.Add(this.dtpHInicial);
             this.Controls.Add(this.btn_Submeter);
             this.Controls.Add(this.lbl_Data);
             this.Controls.Add(this.lbl_Trimestre);
@@ -266,8 +264,8 @@
         private System.Windows.Forms.ColumnHeader ch_Nome;
         private System.Windows.Forms.ListBox lb_Turmas;
         private System.Windows.Forms.Button btn_Submeter;
+        private System.Windows.Forms.DateTimePicker dtpHInicial;
+        private System.Windows.Forms.DateTimePicker dtpHFinal;
         private System.Windows.Forms.DateTimePicker dtp_Data;
-        private System.Windows.Forms.DateTimePicker dtp_HInicial;
-        private System.Windows.Forms.DateTimePicker dtp_HFinal;
     }
 }

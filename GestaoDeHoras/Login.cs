@@ -13,6 +13,8 @@ namespace GestaoDeHoras
 {
     public partial class Login : Form
     {
+        public static string Tipo = "";
+        public static string Aluno = "";
         public Login()
         {
             InitializeComponent();
@@ -37,15 +39,31 @@ namespace GestaoDeHoras
             Logins dados = new Logins();
             try
             {
-                if (dados.LoginAluno(tbxUser.Text, tbxPass.Text, lbTitle.Text))
+                if (lbTitle.Text == "Aluno")
                 {
-                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    if (dados.Login(tbxUser.Text, tbxPass.Text, lbTitle.Text))
+                    {
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                        Tipo = "Aluno";
+                        Aluno = tbxUser.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password ou Username Incorretos");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Username ou Password Incorretos");
+                    if (dados.Login(tbxUser.Text, tbxPass.Text, lbTitle.Text))
+                    {
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                        Tipo = "Professor";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password ou Username Incorretos");
+                    }
                 }
-
 
             }
             catch (Exception ex)

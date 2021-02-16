@@ -30,12 +30,12 @@ namespace DataAccessLayer
         }
 
 
-        public bool LoginAluno(string user, string pass, string tipo) //tipo = Aluno ou Professor
+        public bool Login(string user, string pass, string tipo) //tipo = Aluno ou Professor
         {
             ConString.con.Open();
             try
             {
-                SqlCommand cmdInsNota = new SqlCommand("Select Numero from "+ tipo +" where username='"+ user +"' and Pass='"+ pass +"'", ConString.con); //Erro
+                SqlCommand cmdInsNota = new SqlCommand("Select * from "+ tipo +" where username='"+ user +"' and Pass='"+ pass +"'", ConString.con); //Erro
                 SqlDataReader reader = cmdInsNota.ExecuteReader();
                 if (reader.HasRows)
                 {

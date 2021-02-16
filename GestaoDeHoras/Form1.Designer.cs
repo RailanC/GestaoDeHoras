@@ -74,14 +74,14 @@ namespace GestaoDeHoras
             // tsmiCriar
             // 
             this.tsmiCriar.Name = "tsmiCriar";
-            this.tsmiCriar.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCriar.Size = new System.Drawing.Size(112, 22);
             this.tsmiCriar.Text = "Criar";
             this.tsmiCriar.Click += new System.EventHandler(this.tsmiCriar_Click);
             // 
             // tsmiApagar
             // 
             this.tsmiApagar.Name = "tsmiApagar";
-            this.tsmiApagar.Size = new System.Drawing.Size(180, 22);
+            this.tsmiApagar.Size = new System.Drawing.Size(112, 22);
             this.tsmiApagar.Text = "Apagar";
             this.tsmiApagar.Click += new System.EventHandler(this.tsmiApagar_Click);
             // 
@@ -120,13 +120,13 @@ namespace GestaoDeHoras
             // tsmiTotalHCompensar
             // 
             this.tsmiTotalHCompensar.Name = "tsmiTotalHCompensar";
-            this.tsmiTotalHCompensar.Size = new System.Drawing.Size(224, 22);
+            this.tsmiTotalHCompensar.Size = new System.Drawing.Size(223, 22);
             this.tsmiTotalHCompensar.Text = "Total de horas a compensar";
             // 
             // tsmiTotalHCompensacao
             // 
             this.tsmiTotalHCompensacao.Name = "tsmiTotalHCompensacao";
-            this.tsmiTotalHCompensacao.Size = new System.Drawing.Size(224, 22);
+            this.tsmiTotalHCompensacao.Size = new System.Drawing.Size(223, 22);
             this.tsmiTotalHCompensacao.Text = "Total de horas compensadas";
             // 
             // listView1
@@ -139,10 +139,11 @@ namespace GestaoDeHoras
             this.ch_HoraInicC,
             this.ch_HoraFinC,
             this.ch_DataC});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 37);
+            this.listView1.Location = new System.Drawing.Point(0, 24);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(936, 484);
+            this.listView1.Size = new System.Drawing.Size(960, 509);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;

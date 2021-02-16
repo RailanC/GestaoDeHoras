@@ -27,8 +27,22 @@ namespace GestaoDeHoras
             {
                 this.Close();
             }
+            else
+            {
+                if (Login.Tipo == "Aluno")
+                {
+                    CarregarLvAluno(Login.Aluno);
+                    menuStrip1.Visible = false;
+                }
+                else
+                {
+                    menuStrip1.Visible = true;
+                    CarregarLv();
+                }
 
-            CarregarLv();
+            }
+
+            
 
         }
 
@@ -63,6 +77,42 @@ namespace GestaoDeHoras
             finally { ConString.con.Close(); }
         }
 
+        public void CarregarLvAluno(string aluno)
+        {
+
+            ConString.con.Open();
+            int numero = 0;
+            ListViewItem lvi;
+
+            try
+            {
+                listView1.Items.Clear();
+                numero = Convert.ToInt32(aluno.Replace("I", ""));
+                SqlCommand cmd = new SqlCommand("Select * from Horas where Aluno='" + numero + "'", ConString.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lvi = new ListViewItem();
+                    lvi.Text = reader.GetValue(1).ToString();
+                    lvi.SubItems.Add(reader.GetValue(2).ToString());
+                    lvi.SubItems.Add(reader.GetValue(3).ToString());
+                    lvi.SubItems.Add(reader.GetValue(4).ToString());
+                    lvi.SubItems.Add(reader.GetValue(5).ToString());
+                    lvi.SubItems.Add(reader.GetValue(6).ToString());
+                    lvi.SubItems.Add(reader.GetValue(7).ToString());
+
+                    listView1.Items.Add(lvi);
+                }
+            }
+            catch
+            {
+
+            }
+            finally { ConString.con.Close(); }
+        }
+
+
         private void tsmiCriar_Click(object sender, EventArgs e)
         {
             Criar criar = new Criar();
@@ -71,7 +121,7 @@ namespace GestaoDeHoras
             this.Show();
         }
 
-        
+
 
         private void omACompensar_Click(object sender, EventArgs e)
         {

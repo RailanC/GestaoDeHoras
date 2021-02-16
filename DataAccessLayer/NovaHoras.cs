@@ -13,7 +13,7 @@ namespace DataAccessLayer
         private int numero;
         private string sigla;
         private int trim;
-        private long minutos;
+        private float minutos;
         private string dataInicial;
 
         public int Numero
@@ -36,7 +36,7 @@ namespace DataAccessLayer
             get { return dataInicial; }
             set { dataInicial = value; }
         }
-        public long Minutos
+        public float Minutos
         {
             get { return minutos; }
             set { minutos = value; }
@@ -44,7 +44,7 @@ namespace DataAccessLayer
 
 
 
-        public bool AddHoras(int numero, string sigla, int trim, long minutos, string dataInicial, string hInic, string hFinal)
+        public bool AddHoras(int numero, string sigla, int trim, float minutos, DateTime dataInicial, DateTime hInic, DateTime hFinal)
         {
             ConString.con.Open();
             try
@@ -60,6 +60,40 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@Hfinal", hFinal);
                 cmd.ExecuteNonQuery();
                 return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                ConString.con.Close();
+            }
+        }
+
+        public bool AddHoras(int numero, string sigla, int trim, float minutos)
+        {
+            ConString.con.Open();
+            try
+            {
+                if(minutos == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("sp_NewHora", ConString.con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Aluno", numero);
+                    cmd.Parameters.AddWithValue("@trim", trim);
+                    cmd.Parameters.AddWithValue("@Sigla", sigla);
+                    cmd.Parameters.AddWithValue("@qtd", minutos);
+                    cmd.Parameters.AddWithValue("@data", "");
+                    cmd.Parameters.AddWithValue("@Hinic", "");
+                    cmd.Parameters.AddWithValue("@Hfinal", "");
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
