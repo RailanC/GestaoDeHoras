@@ -73,7 +73,16 @@ namespace GestaoDeHoras
 
         private void btn_Submeter_Click(object sender, EventArgs e)
         {
+            if (lb_Turmas.SelectedIndex != -1 || lv_Alunos.SelectedIndices.Count != 0 || cb_Disciplina.SelectedIndex != -1 || cb_Trimestre.SelectedIndex == -1 )
+            {
 
+                //Inserir código!!!!!!!!!!!!
+
+            }
+            else
+            {
+                MessageBox.Show("Os campos não estão todos preenchidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
