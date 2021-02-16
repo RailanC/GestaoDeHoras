@@ -44,7 +44,7 @@ namespace DataAccessLayer
 
 
 
-        public bool AddHoras(int numero, string sigla, int trim, long minutos, string dataInicial)
+        public bool AddHoras(int numero, string sigla, int trim, long minutos, string dataInicial, string hInic, string hFinal)
         {
             ConString.con.Open();
             try
@@ -56,6 +56,8 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@Sigla", sigla);
                 cmd.Parameters.AddWithValue("@qtd", minutos);
                 cmd.Parameters.AddWithValue("@data", dataInicial);
+                cmd.Parameters.AddWithValue("@Hinic", hInic);
+                cmd.Parameters.AddWithValue("@Hfinal", hFinal);
                 cmd.ExecuteNonQuery();
                 return true;
             }

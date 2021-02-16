@@ -44,13 +44,21 @@ namespace GestaoDeHoras
             try
             {
                 Registo rst = new Registo();
-                if (rst.RegistoA(Convert.ToInt32(tbxNumero.Text), tbxNome.Text, tbxUser.Text, tbxPass.Text, cbbTurma.SelectedItem.ToString()))
+                if (tbxPass.Text == tbxConfPass.Text)
                 {
-                    MessageBox.Show("Criado");
+                    if (rst.RegistoA(Convert.ToInt32(tbxNumero.Text), tbxNome.Text, tbxUser.Text, tbxPass.Text, cbbTurma.SelectedItem.ToString()))
+                    {
+
+                        MessageBox.Show("Criado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro");
+                    MessageBox.Show("As duas passwords não coincidem!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception ex)
@@ -59,7 +67,6 @@ namespace GestaoDeHoras
             }
             finally
             {
-
             }
         }
 

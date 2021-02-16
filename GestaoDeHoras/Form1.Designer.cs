@@ -39,6 +39,14 @@ namespace GestaoDeHoras
             this.tsmiFerramentas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTotalHCompensar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTotalHCompensacao = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ch_Aluno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_Sigla = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_Trimestre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_QuantH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_HoraInicC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_HoraFinC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_DataC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +83,7 @@ namespace GestaoDeHoras
             this.tsmiApagar.Name = "tsmiApagar";
             this.tsmiApagar.Size = new System.Drawing.Size(180, 22);
             this.tsmiApagar.Text = "Apagar";
+            this.tsmiApagar.Click += new System.EventHandler(this.tsmiApagar_Click);
             // 
             // tsmiHoras
             // 
@@ -90,12 +99,14 @@ namespace GestaoDeHoras
             this.omACompensar.Name = "omACompensar";
             this.omACompensar.Size = new System.Drawing.Size(150, 22);
             this.omACompensar.Text = " A compensar";
+            this.omACompensar.Click += new System.EventHandler(this.omACompensar_Click);
             // 
             // tsmiCompensacao
             // 
             this.tsmiCompensacao.Name = "tsmiCompensacao";
             this.tsmiCompensacao.Size = new System.Drawing.Size(150, 22);
             this.tsmiCompensacao.Text = "Compensação";
+            this.tsmiCompensacao.Click += new System.EventHandler(this.tsmiCompensacao_Click);
             // 
             // tsmiFerramentas
             // 
@@ -109,14 +120,64 @@ namespace GestaoDeHoras
             // tsmiTotalHCompensar
             // 
             this.tsmiTotalHCompensar.Name = "tsmiTotalHCompensar";
-            this.tsmiTotalHCompensar.Size = new System.Drawing.Size(223, 22);
+            this.tsmiTotalHCompensar.Size = new System.Drawing.Size(224, 22);
             this.tsmiTotalHCompensar.Text = "Total de horas a compensar";
             // 
             // tsmiTotalHCompensacao
             // 
             this.tsmiTotalHCompensacao.Name = "tsmiTotalHCompensacao";
-            this.tsmiTotalHCompensacao.Size = new System.Drawing.Size(223, 22);
+            this.tsmiTotalHCompensacao.Size = new System.Drawing.Size(224, 22);
             this.tsmiTotalHCompensacao.Text = "Total de horas compensadas";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ch_Aluno,
+            this.ch_Sigla,
+            this.ch_Trimestre,
+            this.ch_QuantH,
+            this.ch_HoraInicC,
+            this.ch_HoraFinC,
+            this.ch_DataC});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 37);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(936, 484);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // ch_Aluno
+            // 
+            this.ch_Aluno.Text = "Aluno";
+            // 
+            // ch_Sigla
+            // 
+            this.ch_Sigla.Text = "Sigla";
+            // 
+            // ch_Trimestre
+            // 
+            this.ch_Trimestre.Text = "Trimestre";
+            this.ch_Trimestre.Width = 75;
+            // 
+            // ch_QuantH
+            // 
+            this.ch_QuantH.Text = "QuantH";
+            this.ch_QuantH.Width = 66;
+            // 
+            // ch_HoraInicC
+            // 
+            this.ch_HoraInicC.Text = "HoraInicC";
+            this.ch_HoraInicC.Width = 78;
+            // 
+            // ch_HoraFinC
+            // 
+            this.ch_HoraFinC.Text = "HoraFinC";
+            this.ch_HoraFinC.Width = 78;
+            // 
+            // ch_DataC
+            // 
+            this.ch_DataC.Text = "DataC";
             // 
             // Form1
             // 
@@ -124,6 +185,7 @@ namespace GestaoDeHoras
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(41)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(960, 533);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
@@ -150,6 +212,14 @@ namespace GestaoDeHoras
         private System.Windows.Forms.ToolStripMenuItem tsmiFerramentas;
         private System.Windows.Forms.ToolStripMenuItem tsmiTotalHCompensar;
         private System.Windows.Forms.ToolStripMenuItem tsmiTotalHCompensacao;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader ch_Aluno;
+        private System.Windows.Forms.ColumnHeader ch_Sigla;
+        private System.Windows.Forms.ColumnHeader ch_Trimestre;
+        private System.Windows.Forms.ColumnHeader ch_QuantH;
+        private System.Windows.Forms.ColumnHeader ch_HoraInicC;
+        private System.Windows.Forms.ColumnHeader ch_HoraFinC;
+        private System.Windows.Forms.ColumnHeader ch_DataC;
     }
 }
 

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApagarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApagarAluno.Designer.cs">
+      <DependentUpon>ApagarAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompensacaoHoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompensacaoHoras.Designer.cs">
+      <DependentUpon>CompensacaoHoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompensarHoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompensarHoras.Designer.cs">
+      <DependentUpon>CompensarHoras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Criar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +84,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ApagarAluno.resx">
+      <DependentUpon>ApagarAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompensacaoHoras.resx">
+      <DependentUpon>CompensacaoHoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompensarHoras.resx">
+      <DependentUpon>CompensarHoras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Criar.resx">
       <DependentUpon>Criar.cs</DependentUpon>
     </EmbeddedResource>

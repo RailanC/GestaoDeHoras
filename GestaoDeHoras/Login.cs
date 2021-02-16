@@ -43,7 +43,7 @@ namespace GestaoDeHoras
                 }
                 else
                 {
-                    MessageBox.Show("Password Incorreta");
+                    MessageBox.Show("Password ou Username Incorretos");
                 }
 
 

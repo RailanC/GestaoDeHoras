@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,40 @@ namespace GestaoDeHoras
             {
                 this.Close();
             }
+
+            CarregarLv();
+
+        }
+
+        public void CarregarLv()
+        {
+            ConString.con.Open();
+
+            ListViewItem lvi;
+
+            try
+            {
+                listView1.Items.Clear();
+
+                SqlCommand cmd = new SqlCommand("Select * from Horas", ConString.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lvi = new ListViewItem();
+                    lvi.Text = reader.GetValue(1).ToString();
+                    lvi.SubItems.Add(reader.GetValue(2).ToString());
+                    lvi.SubItems.Add(reader.GetValue(3).ToString());
+                    lvi.SubItems.Add(reader.GetValue(4).ToString());
+                    lvi.SubItems.Add(reader.GetValue(5).ToString());
+                    lvi.SubItems.Add(reader.GetValue(6).ToString());
+                    lvi.SubItems.Add(reader.GetValue(7).ToString());
+
+                    listView1.Items.Add(lvi);
+                }
+            }
+            catch { }
+            finally { ConString.con.Close(); }
         }
 
         private void tsmiCriar_Click(object sender, EventArgs e)
@@ -33,6 +68,32 @@ namespace GestaoDeHoras
             Criar criar = new Criar();
             this.Hide();
             criar.ShowDialog();
+            this.Show();
+        }
+
+        
+
+        private void omACompensar_Click(object sender, EventArgs e)
+        {
+            CompensarHoras compensarH = new CompensarHoras();
+            this.Hide();
+            compensarH.ShowDialog();
+            this.Show();
+        }
+
+        private void tsmiCompensacao_Click(object sender, EventArgs e)
+        {
+            CompensacaoHoras compensacaoH = new CompensacaoHoras();
+            this.Hide();
+            compensacaoH.ShowDialog();
+            this.Show();
+        }
+
+        private void tsmiApagar_Click(object sender, EventArgs e)
+        {
+            ApagarAluno apagarA = new ApagarAluno();
+            this.Hide();
+            apagarA.ShowDialog();
             this.Show();
         }
     }

@@ -68,7 +68,7 @@ namespace GestaoDeHoras
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(284, 190);
+            this.panel2.Location = new System.Drawing.Point(283, 198);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(216, 1);
             this.panel2.TabIndex = 53;
@@ -82,7 +82,7 @@ namespace GestaoDeHoras
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(30, 118);
+            this.panel1.Location = new System.Drawing.Point(29, 126);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 1);
             this.panel1.TabIndex = 54;
@@ -176,7 +176,7 @@ namespace GestaoDeHoras
             this.bttLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttLogin.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.bttLogin.ForeColor = System.Drawing.Color.White;
-            this.bttLogin.Location = new System.Drawing.Point(32, 311);
+            this.bttLogin.Location = new System.Drawing.Point(31, 319);
             this.bttLogin.Name = "bttLogin";
             this.bttLogin.Size = new System.Drawing.Size(214, 32);
             this.bttLogin.TabIndex = 50;
@@ -189,7 +189,7 @@ namespace GestaoDeHoras
             this.tbxPass.BackColor = System.Drawing.Color.White;
             this.tbxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxPass.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPass.Location = new System.Drawing.Point(284, 163);
+            this.tbxPass.Location = new System.Drawing.Point(283, 171);
             this.tbxPass.Multiline = true;
             this.tbxPass.Name = "tbxPass";
             this.tbxPass.PasswordChar = '*';
@@ -201,7 +201,7 @@ namespace GestaoDeHoras
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbPassword.Location = new System.Drawing.Point(281, 141);
+            this.lbPassword.Location = new System.Drawing.Point(280, 149);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(66, 17);
             this.lbPassword.TabIndex = 44;
@@ -212,7 +212,7 @@ namespace GestaoDeHoras
             this.tbxNumero.BackColor = System.Drawing.Color.White;
             this.tbxNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxNumero.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNumero.Location = new System.Drawing.Point(30, 93);
+            this.tbxNumero.Location = new System.Drawing.Point(29, 101);
             this.tbxNumero.Multiline = true;
             this.tbxNumero.Name = "tbxNumero";
             this.tbxNumero.Size = new System.Drawing.Size(216, 28);
@@ -223,7 +223,7 @@ namespace GestaoDeHoras
             this.lbNumero.AutoSize = true;
             this.lbNumero.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbNumero.Location = new System.Drawing.Point(27, 71);
+            this.lbNumero.Location = new System.Drawing.Point(26, 79);
             this.lbNumero.Name = "lbNumero";
             this.lbNumero.Size = new System.Drawing.Size(58, 17);
             this.lbNumero.TabIndex = 45;
@@ -234,7 +234,7 @@ namespace GestaoDeHoras
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(87)))), ((int)(((byte)(174)))));
-            this.lbTitle.Location = new System.Drawing.Point(25, 20);
+            this.lbTitle.Location = new System.Drawing.Point(24, 28);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(151, 27);
             this.lbTitle.TabIndex = 43;
@@ -243,7 +243,7 @@ namespace GestaoDeHoras
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(284, 259);
+            this.panel3.Location = new System.Drawing.Point(283, 267);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(216, 1);
             this.panel3.TabIndex = 58;
@@ -255,7 +255,7 @@ namespace GestaoDeHoras
             this.cbxSwPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxSwPass.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.cbxSwPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.cbxSwPass.Location = new System.Drawing.Point(381, 266);
+            this.cbxSwPass.Location = new System.Drawing.Point(380, 274);
             this.cbxSwPass.Name = "cbxSwPass";
             this.cbxSwPass.Size = new System.Drawing.Size(119, 21);
             this.cbxSwPass.TabIndex = 57;
@@ -268,7 +268,7 @@ namespace GestaoDeHoras
             this.tbxConfPass.BackColor = System.Drawing.Color.White;
             this.tbxConfPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxConfPass.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxConfPass.Location = new System.Drawing.Point(284, 232);
+            this.tbxConfPass.Location = new System.Drawing.Point(283, 240);
             this.tbxConfPass.Multiline = true;
             this.tbxConfPass.Name = "tbxConfPass";
             this.tbxConfPass.PasswordChar = '*';
@@ -280,7 +280,7 @@ namespace GestaoDeHoras
             this.lbConfPass.AutoSize = true;
             this.lbConfPass.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbConfPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbConfPass.Location = new System.Drawing.Point(281, 210);
+            this.lbConfPass.Location = new System.Drawing.Point(280, 218);
             this.lbConfPass.Name = "lbConfPass";
             this.lbConfPass.Size = new System.Drawing.Size(120, 17);
             this.lbConfPass.TabIndex = 55;
@@ -291,7 +291,7 @@ namespace GestaoDeHoras
             this.cbbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTurma.Font = new System.Drawing.Font("Calibri", 15F);
             this.cbbTurma.FormattingEnabled = true;
-            this.cbbTurma.Location = new System.Drawing.Point(284, 311);
+            this.cbbTurma.Location = new System.Drawing.Point(283, 319);
             this.cbbTurma.Name = "cbbTurma";
             this.cbbTurma.Size = new System.Drawing.Size(216, 32);
             this.cbbTurma.TabIndex = 59;
@@ -301,7 +301,7 @@ namespace GestaoDeHoras
             this.lbTurma.AutoSize = true;
             this.lbTurma.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbTurma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbTurma.Location = new System.Drawing.Point(281, 291);
+            this.lbTurma.Location = new System.Drawing.Point(280, 299);
             this.lbTurma.Name = "lbTurma";
             this.lbTurma.Size = new System.Drawing.Size(47, 17);
             this.lbTurma.TabIndex = 60;
@@ -310,7 +310,7 @@ namespace GestaoDeHoras
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(30, 190);
+            this.panel4.Location = new System.Drawing.Point(29, 198);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(216, 1);
             this.panel4.TabIndex = 63;
@@ -320,7 +320,7 @@ namespace GestaoDeHoras
             this.tbxNome.BackColor = System.Drawing.Color.White;
             this.tbxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxNome.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNome.Location = new System.Drawing.Point(30, 163);
+            this.tbxNome.Location = new System.Drawing.Point(29, 171);
             this.tbxNome.Multiline = true;
             this.tbxNome.Name = "tbxNome";
             this.tbxNome.Size = new System.Drawing.Size(216, 28);
@@ -331,7 +331,7 @@ namespace GestaoDeHoras
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbNome.Location = new System.Drawing.Point(27, 141);
+            this.lbNome.Location = new System.Drawing.Point(26, 149);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(45, 17);
             this.lbNome.TabIndex = 61;
@@ -342,7 +342,7 @@ namespace GestaoDeHoras
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbUser.Location = new System.Drawing.Point(281, 71);
+            this.lbUser.Location = new System.Drawing.Point(280, 79);
             this.lbUser.Name = "lbUser";
             this.lbUser.Size = new System.Drawing.Size(69, 17);
             this.lbUser.TabIndex = 45;
@@ -353,7 +353,7 @@ namespace GestaoDeHoras
             this.tbxUser.BackColor = System.Drawing.Color.White;
             this.tbxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxUser.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUser.Location = new System.Drawing.Point(284, 93);
+            this.tbxUser.Location = new System.Drawing.Point(283, 101);
             this.tbxUser.Multiline = true;
             this.tbxUser.Name = "tbxUser";
             this.tbxUser.Size = new System.Drawing.Size(216, 28);
@@ -365,7 +365,7 @@ namespace GestaoDeHoras
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.textBox3);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(284, 121);
+            this.panel6.Location = new System.Drawing.Point(283, 129);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(216, 1);
             this.panel6.TabIndex = 54;
