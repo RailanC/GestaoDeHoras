@@ -43,25 +43,50 @@ namespace GestaoDeHoras
         {
             try
             {
-                Registo rst = new Registo();
-                if (tbxPass.Text == tbxConfPass.Text)
+                if (tbxNome.Text != "" || tbxNumero.Text != "" || tbxPass.Text != "" || tbxConfPass.Text != "" || tbxUser.Text != "" || cbbTurma.SelectedIndex != -1)
                 {
-                    if (rst.RegistoA(Convert.ToInt32(tbxNumero.Text), tbxNome.Text, tbxUser.Text, tbxPass.Text, cbbTurma.SelectedItem.ToString()))
-                    {
+                    string VerLogin = tbxUser.Text;
+                    VerLogin = VerLogin.Substring(1);
 
-                        MessageBox.Show("Criado");
+                    if (tbxUser.Text.StartsWith("I") || tbxUser.Text.StartsWith("i"))
+                    {
+                        if (tbxNumero.Text == VerLogin)
+                        {
+                            Registo rst = new Registo();
+                            if (tbxPass.Text == tbxConfPass.Text)
+                            {
+                                if (rst.RegistoA(Convert.ToInt32(tbxNumero.Text), tbxNome.Text, tbxUser.Text, tbxPass.Text, cbbTurma.SelectedItem.ToString()))
+                                {
+
+                                    MessageBox.Show("Criado");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Erro");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("As duas passwords não coincidem!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("O Username não está de acordo com o Número do Aluno!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Erro");
+                        MessageBox.Show("O Username não começa com o caracter i !", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("As duas passwords não coincidem!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Os campos não estão todos preenchidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -82,7 +107,7 @@ namespace GestaoDeHoras
                     cbbTurma.Items.Add(reader.GetValue(0).ToString());
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

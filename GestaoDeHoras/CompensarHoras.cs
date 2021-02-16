@@ -78,12 +78,14 @@ namespace GestaoDeHoras
             ConString.con.Open();
             try
             {
-                NovaHoras novaHoras = new NovaHoras();
-                SqlCommand cmdInsNota = new SqlCommand("Select QuantH from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NULL", ConString.con);
-                SqlDataReader reader = cmdInsNota.ExecuteReader();
-
-                if (!reader.HasRows)
+                if (lb_Turmas.SelectedIndex != -1 && lv_Alunos.SelectedIndices.Count != 0 && cb_Disciplina.SelectedIndex != -1 && cb_Trimestre.SelectedIndex != -1 && Convert.ToDouble(nud_HCompensar.Value) != 0)
                 {
+                    NovaHoras novaHoras = new NovaHoras();
+                    SqlCommand cmdInsNota = new SqlCommand("Select QuantH from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NULL", ConString.con);
+                    SqlDataReader reader = cmdInsNota.ExecuteReader();
+
+                    if (!reader.HasRows)
+                    {
                         ConString.con.Close();
                         NovaHoras novaH = new NovaHoras();
                         if (novaH.AddHoras(Convert.ToInt32(lv_Alunos.SelectedItems[0].Text), cb_Disciplina.SelectedItem.ToString(), Convert.ToInt32(cb_Trimestre.SelectedItem.ToString()), float.Parse(nud_HCompensar.Value.ToString()) * 60))
@@ -94,11 +96,16 @@ namespace GestaoDeHoras
                         {
                             MessageBox.Show("Erro");
                         }
-                }else
-                {
-                    MessageBox.Show("Já existe uma hora criada");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Já existe uma hora criada");
+                    }
                 }
-
+                else
+                {
+                    MessageBox.Show("Os campos não estão todos preenchidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {

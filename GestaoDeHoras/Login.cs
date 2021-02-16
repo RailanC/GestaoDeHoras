@@ -49,7 +49,7 @@ namespace GestaoDeHoras
                     }
                     else
                     {
-                        MessageBox.Show("Password ou Username Incorretos");
+                        MessageBox.Show("Username ou Password Incorretos");
                     }
                 }
                 else
@@ -61,7 +61,7 @@ namespace GestaoDeHoras
                     }
                     else
                     {
-                        MessageBox.Show("Password ou Username Incorretos");
+                        MessageBox.Show("Username ou Password Incorretos");
                     }
                 }
 

@@ -134,56 +134,62 @@ namespace GestaoDeHoras
             ConString.con.Open();
             try
             {
-                test = dtp_Data.Value.ToString();
-                total = (float.Parse(dtpHFinal.Value.ToString().Split(' ')[1].Split(':')[0]) + (float.Parse(dtpHFinal.Value.ToString().Split(' ')[1].Split(':')[1]) / 60))
-                            - (float.Parse(dtpHInicial.Value.ToString().Split(' ')[1].Split(':')[0]) + (float.Parse(dtpHInicial.Value.ToString().Split(' ')[1].Split(':')[1]) / 60));
-
-                if (total <= 0)
+                if (lb_Turmas.SelectedIndex != -1 && lv_Alunos.SelectedIndices.Count != 0 && cb_Disciplina.SelectedIndex != -1 && cb_Trimestre.SelectedIndex != -1)
                 {
-                    MessageBox.Show("Valores de Horas Inválidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    NovaHoras novaHoras = new NovaHoras();
-                    SqlCommand cmdInsNota = new SqlCommand("Select QuantH from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NULL", ConString.con);
-                    SqlDataReader reader = cmdInsNota.ExecuteReader();
+                    test = dtp_Data.Value.ToString();
+                    total = (float.Parse(dtpHFinal.Value.ToString().Split(' ')[1].Split(':')[0]) + (float.Parse(dtpHFinal.Value.ToString().Split(' ')[1].Split(':')[1]) / 60))
+                                - (float.Parse(dtpHInicial.Value.ToString().Split(' ')[1].Split(':')[0]) + (float.Parse(dtpHInicial.Value.ToString().Split(' ')[1].Split(':')[1]) / 60));
 
-                    while (reader.Read())
+                    if (total <= 0)
                     {
-                        var = float.Parse(reader.GetValue(0).ToString());
+                        MessageBox.Show("Valores de Horas Inválidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-
-                    if (var != 0)
+                    else
                     {
-                        reader.Close();
-                        SqlCommand cmd = new SqlCommand("Select * from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NOT NULL", ConString.con);
-                        SqlDataReader reader1 = cmd.ExecuteReader();
+                        NovaHoras novaHoras = new NovaHoras();
+                        SqlCommand cmdInsNota = new SqlCommand("Select QuantH from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NULL", ConString.con);
+                        SqlDataReader reader = cmdInsNota.ExecuteReader();
 
-                        while (reader1.Read())
+                        while (reader.Read())
                         {
-                            qtdHComp += TimeToFloat(reader1.GetValue(5).ToString(), reader1.GetValue(6).ToString());
+                            var = float.Parse(reader.GetValue(0).ToString());
                         }
 
-                        if (var - qtdHComp <= 0)
+
+                        if (var != 0)
                         {
-                            MessageBox.Show("Este aluno já não tem Horas a compensar!");
-                        }
-                        else
-                        {
-                            ConString.con.Close();
-                            NovaHoras novaH = new NovaHoras();
-                            if (novaH.AddHoras(Convert.ToInt32(lv_Alunos.SelectedItems[0].Text), cb_Disciplina.SelectedItem.ToString(), Convert.ToInt32(cb_Trimestre.SelectedItem.ToString()), var, dtp_Data.Value, dtpHInicial.Value, dtpHFinal.Value))
+                            reader.Close();
+                            SqlCommand cmd = new SqlCommand("Select * from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NOT NULL", ConString.con);
+                            SqlDataReader reader1 = cmd.ExecuteReader();
+
+                            while (reader1.Read())
                             {
-                                MessageBox.Show("C");
+                                qtdHComp += TimeToFloat(reader1.GetValue(5).ToString(), reader1.GetValue(6).ToString());
+                            }
+
+                            if (var - qtdHComp <= 0)
+                            {
+                                MessageBox.Show("Este aluno já não tem Horas a compensar!");
                             }
                             else
                             {
-                                MessageBox.Show("E");
+                                ConString.con.Close();
+                                NovaHoras novaH = new NovaHoras();
+                                if (novaH.AddHoras(Convert.ToInt32(lv_Alunos.SelectedItems[0].Text), cb_Disciplina.SelectedItem.ToString(), Convert.ToInt32(cb_Trimestre.SelectedItem.ToString()), var, dtp_Data.Value, dtpHInicial.Value, dtpHFinal.Value))
+                                {
+                                    MessageBox.Show("C");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("E");
+                                }
                             }
                         }
                     }
-
+                }
+                else
+                {
+                    MessageBox.Show("Os campos não estão todos preenchidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
