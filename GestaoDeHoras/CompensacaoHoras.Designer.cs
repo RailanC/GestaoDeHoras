@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.lbl_CompensacaoH = new System.Windows.Forms.Label();
-            this.nud_MI = new System.Windows.Forms.NumericUpDown();
-            this.lbl_MI = new System.Windows.Forms.Label();
-            this.nud_MF = new System.Windows.Forms.NumericUpDown();
-            this.lbl_MF = new System.Windows.Forms.Label();
-            this.nud_HI = new System.Windows.Forms.NumericUpDown();
             this.lbl_HI = new System.Windows.Forms.Label();
-            this.nud_HF = new System.Windows.Forms.NumericUpDown();
             this.lbl_HF = new System.Windows.Forms.Label();
             this.lbl_Data = new System.Windows.Forms.Label();
             this.lbl_Trimestre = new System.Windows.Forms.Label();
@@ -48,10 +42,8 @@
             this.lb_Turmas = new System.Windows.Forms.ListBox();
             this.btn_Submeter = new System.Windows.Forms.Button();
             this.dtp_Data = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_HI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_HF)).BeginInit();
+            this.dtp_HInicial = new System.Windows.Forms.DateTimePicker();
+            this.dtp_HFinal = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_CompensacaoH
@@ -66,94 +58,6 @@
             this.lbl_CompensacaoH.TabIndex = 98;
             this.lbl_CompensacaoH.Text = "Compensação Horas";
             // 
-            // nud_MI
-            // 
-            this.nud_MI.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.nud_MI.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.nud_MI.Location = new System.Drawing.Point(30, 367);
-            this.nud_MI.Margin = new System.Windows.Forms.Padding(4);
-            this.nud_MI.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.nud_MI.Name = "nud_MI";
-            this.nud_MI.Size = new System.Drawing.Size(84, 23);
-            this.nud_MI.TabIndex = 115;
-            // 
-            // lbl_MI
-            // 
-            this.lbl_MI.AutoSize = true;
-            this.lbl_MI.Enabled = false;
-            this.lbl_MI.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_MI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbl_MI.Location = new System.Drawing.Point(26, 346);
-            this.lbl_MI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_MI.Name = "lbl_MI";
-            this.lbl_MI.Size = new System.Drawing.Size(97, 17);
-            this.lbl_MI.TabIndex = 114;
-            this.lbl_MI.Text = "Minutos Inicio";
-            // 
-            // nud_MF
-            // 
-            this.nud_MF.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.nud_MF.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.nud_MF.Location = new System.Drawing.Point(425, 367);
-            this.nud_MF.Margin = new System.Windows.Forms.Padding(4);
-            this.nud_MF.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.nud_MF.Name = "nud_MF";
-            this.nud_MF.Size = new System.Drawing.Size(84, 23);
-            this.nud_MF.TabIndex = 113;
-            // 
-            // lbl_MF
-            // 
-            this.lbl_MF.AutoSize = true;
-            this.lbl_MF.Enabled = false;
-            this.lbl_MF.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_MF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lbl_MF.Location = new System.Drawing.Point(423, 346);
-            this.lbl_MF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_MF.Name = "lbl_MF";
-            this.lbl_MF.Size = new System.Drawing.Size(86, 17);
-            this.lbl_MF.TabIndex = 112;
-            this.lbl_MF.Text = "Minutos Fim";
-            // 
-            // nud_HI
-            // 
-            this.nud_HI.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.nud_HI.Location = new System.Drawing.Point(30, 316);
-            this.nud_HI.Margin = new System.Windows.Forms.Padding(4);
-            this.nud_HI.Maximum = new decimal(new int[] {
-            19,
-            0,
-            0,
-            0});
-            this.nud_HI.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.nud_HI.Name = "nud_HI";
-            this.nud_HI.Size = new System.Drawing.Size(84, 23);
-            this.nud_HI.TabIndex = 111;
-            this.nud_HI.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
             // lbl_HI
             // 
             this.lbl_HI.AutoSize = true;
@@ -166,30 +70,6 @@
             this.lbl_HI.Size = new System.Drawing.Size(79, 17);
             this.lbl_HI.TabIndex = 110;
             this.lbl_HI.Text = "Hora Inicial";
-            // 
-            // nud_HF
-            // 
-            this.nud_HF.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.nud_HF.Location = new System.Drawing.Point(425, 316);
-            this.nud_HF.Margin = new System.Windows.Forms.Padding(4);
-            this.nud_HF.Maximum = new decimal(new int[] {
-            19,
-            0,
-            0,
-            0});
-            this.nud_HF.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.nud_HF.Name = "nud_HF";
-            this.nud_HF.Size = new System.Drawing.Size(84, 23);
-            this.nud_HF.TabIndex = 109;
-            this.nud_HF.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
             // 
             // lbl_HF
             // 
@@ -300,9 +180,9 @@
             this.btn_Submeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Submeter.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Submeter.ForeColor = System.Drawing.Color.White;
-            this.btn_Submeter.Location = new System.Drawing.Point(30, 416);
+            this.btn_Submeter.Location = new System.Drawing.Point(29, 362);
             this.btn_Submeter.Name = "btn_Submeter";
-            this.btn_Submeter.Size = new System.Drawing.Size(214, 32);
+            this.btn_Submeter.Size = new System.Drawing.Size(222, 32);
             this.btn_Submeter.TabIndex = 124;
             this.btn_Submeter.Text = "SUBMETER";
             this.btn_Submeter.UseVisualStyleBackColor = false;
@@ -319,12 +199,36 @@
             this.dtp_Data.TabIndex = 125;
             this.dtp_Data.Value = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
             // 
+            // dtp_HInicial
+            // 
+            this.dtp_HInicial.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.dtp_HInicial.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_HInicial.Location = new System.Drawing.Point(29, 315);
+            this.dtp_HInicial.MaxDate = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
+            this.dtp_HInicial.Name = "dtp_HInicial";
+            this.dtp_HInicial.Size = new System.Drawing.Size(222, 23);
+            this.dtp_HInicial.TabIndex = 126;
+            this.dtp_HInicial.Value = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
+            // 
+            // dtp_HFinal
+            // 
+            this.dtp_HFinal.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.dtp_HFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_HFinal.Location = new System.Drawing.Point(281, 315);
+            this.dtp_HFinal.MaxDate = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
+            this.dtp_HFinal.Name = "dtp_HFinal";
+            this.dtp_HFinal.Size = new System.Drawing.Size(228, 23);
+            this.dtp_HFinal.TabIndex = 127;
+            this.dtp_HFinal.Value = new System.DateTime(2020, 10, 21, 0, 0, 0, 0);
+            // 
             // CompensacaoHoras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(548, 478);
+            this.ClientSize = new System.Drawing.Size(548, 411);
+            this.Controls.Add(this.dtp_HFinal);
+            this.Controls.Add(this.dtp_HInicial);
             this.Controls.Add(this.dtp_Data);
             this.Controls.Add(this.btn_Submeter);
             this.Controls.Add(this.lbl_Data);
@@ -334,13 +238,7 @@
             this.Controls.Add(this.cb_Disciplina);
             this.Controls.Add(this.lv_Alunos);
             this.Controls.Add(this.lb_Turmas);
-            this.Controls.Add(this.nud_MI);
-            this.Controls.Add(this.lbl_MI);
-            this.Controls.Add(this.nud_MF);
-            this.Controls.Add(this.lbl_MF);
-            this.Controls.Add(this.nud_HI);
             this.Controls.Add(this.lbl_HI);
-            this.Controls.Add(this.nud_HF);
             this.Controls.Add(this.lbl_HF);
             this.Controls.Add(this.lbl_CompensacaoH);
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -349,10 +247,6 @@
             this.Name = "CompensacaoHoras";
             this.Text = "CompensacaoHoras";
             this.Load += new System.EventHandler(this.CompensacaoHoras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_HI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_HF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,13 +254,7 @@
 
         #endregion
         private System.Windows.Forms.Label lbl_CompensacaoH;
-        private System.Windows.Forms.NumericUpDown nud_MI;
-        private System.Windows.Forms.Label lbl_MI;
-        private System.Windows.Forms.NumericUpDown nud_MF;
-        private System.Windows.Forms.Label lbl_MF;
-        private System.Windows.Forms.NumericUpDown nud_HI;
         private System.Windows.Forms.Label lbl_HI;
-        private System.Windows.Forms.NumericUpDown nud_HF;
         private System.Windows.Forms.Label lbl_HF;
         private System.Windows.Forms.Label lbl_Data;
         private System.Windows.Forms.Label lbl_Trimestre;
@@ -379,5 +267,7 @@
         private System.Windows.Forms.ListBox lb_Turmas;
         private System.Windows.Forms.Button btn_Submeter;
         private System.Windows.Forms.DateTimePicker dtp_Data;
+        private System.Windows.Forms.DateTimePicker dtp_HInicial;
+        private System.Windows.Forms.DateTimePicker dtp_HFinal;
     }
 }

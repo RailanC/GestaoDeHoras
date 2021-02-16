@@ -123,6 +123,71 @@ namespace GestaoDeHoras
         private void btnSubmeter_Click(object sender, EventArgs e)
         {
 
+            float var = 0;
+            float qtdHComp = 0;
+
+
+            try
+            {
+
+                if (tempoTot <= 0)
+                {
+                    MessageBox.Show("Valores de Horas Inválidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    NovaHoras novaHoras = new NovaHoras();
+                    SqlCommand cmdInsNota = new SqlCommand("Select QuantH, id from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NULL", ConString.con);
+                    SqlDataReader reader = cmdInsNota.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var = float.Parse(reader.GetValue(0).ToString());
+                    }
+
+
+                    if (var == 0)
+                    {
+                        reader.Close();
+                        SqlCommand cmd = new SqlCommand("Select * from Horas WHERE Aluno = '" + lv_Alunos.SelectedItems[0].Text + "' AND Sigla='" + cb_Disciplina.SelectedItem.ToString() + "' AND Trimestre = '" + cb_Trimestre.SelectedItem.ToString() + "' AND HoraInicC is NOT NULL", ConString.con);
+                        SqlDataReader reader1 = cmdInsNota.ExecuteReader();
+
+                        while (reader1.Read())
+                        {
+                            qtdHComp += TimeToFloat(reader1.GetValue(5).ToString(), reader1.GetValue(6).ToString());
+
+                        }
+
+                        if (var - qtdHComp <= 0)
+                        {
+                            MessageBox.Show("Este aluno já não tem Horas a compensar!");
+                        }
+                        else
+                        {
+                            NovaHoras novaH = new NovaHoras();
+
+                            if (novaH.AddHoras(Convert.ToInt32(lv_Alunos.SelectedItems[0].Text), cb_Disciplina.SelectedItem.ToString(), cb_Trimestre.SelectedItem.ToString(), var, dtp_Data.Value.ToString(),  )
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+            }
+        }
+
+        public float TimeToFloat(string texto2, string texto)
+        {
+            float numero;
+            numero = (float.Parse(texto.Split(' ')[1].Split(':')[0]) + (float.Parse(texto.Split(' ')[1].Split(':')[1]) / 60))
+                            - (float.Parse(texto2.Split(' ')[1].Split(':')[0]) + (float.Parse(texto2.Split(' ')[1].Split(':')[1]) / 60));
+            numero = numero * 60;
+            return numero;
         }
     }
 }

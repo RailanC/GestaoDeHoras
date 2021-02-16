@@ -41,7 +41,7 @@
             this.cbbTurma.FormattingEnabled = true;
             this.cbbTurma.Location = new System.Drawing.Point(29, 99);
             this.cbbTurma.Name = "cbbTurma";
-            this.cbbTurma.Size = new System.Drawing.Size(314, 23);
+            this.cbbTurma.Size = new System.Drawing.Size(330, 23);
             this.cbbTurma.TabIndex = 79;
             // 
             // bttApagar

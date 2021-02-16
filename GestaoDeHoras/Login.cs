@@ -43,7 +43,7 @@ namespace GestaoDeHoras
                 }
                 else
                 {
-                    MessageBox.Show("Password ou Username Incorretos");
+                    MessageBox.Show("Username ou Password Incorretos");
                 }
 
 
@@ -52,11 +52,6 @@ namespace GestaoDeHoras
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void lbCreate_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void bttQuit_Click(object sender, EventArgs e)
@@ -86,6 +81,11 @@ namespace GestaoDeHoras
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void lbCreate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vai ser redirecionado para o site de Registo");
         }
     }
 }
